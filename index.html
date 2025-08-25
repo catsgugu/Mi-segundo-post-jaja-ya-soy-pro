@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Herramientas Computacionales</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.4/p5.min.js" integrity="sha512-rOTpdy9fXlcLeLxPj5H4pof51FAx2lVK8Soexk8yTek9wrenwm56MKT2VddH8GCDd4a2js2i4GwezlUkbGdVQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        
+        
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background: #f5cdd4;
+                font-family: "Bebas Neue", sans-serif;
+            }
+
+            h1 {
+                text-wrap: balance;
+            }
+
+            canvas {
+                display: block;
+                text-align: center;
+            }
+
+            main {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: min(90vw, 900px);
+                background: rgba(255, 255, 255, 0.25);
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+                border-radius: 10px;
+            }
+
+            main > div {
+                width: 46%;
+                margin: 2%;
+                float: left;
+            }
+
+            @media (orientation: portrait) {
+                main > div {
+                    width: 96%;
+                    margin: 2%;
+                    float: none;
+                }
+            }
+
+            canvas {
+                border-radius: 10px;
+            }
+
+            span {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div>
+              
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 25 25">
+  <defs>
+    <style>
+      .st0 {
+        fill: #efd462;
+      }
+
+      .st0, .st1 {
+        stroke-width: .8px;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        stroke: #000;
+      }
+
+      .st0, .st2, .st3 {
+        stroke-miterlimit: 10;
+      }
+
+      .st4 {
+        fill: #e5acd5;
+      }
+
+      .st1 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st1, .st2 {
+        fill: none;
+      }
+
+      .st5 {
+        fill: #e8d2ac;
+      }
+
+      .st6 {
+        fill: #dd6464;
+      }
+
+      .st6, .st7, .st8 {
+        fill-rule: evenodd;
+      }
+
+      .st9 {
+        fill: #ea94c3;
+      }
+
+      .st2, .st3 {
+        stroke-width: .2px;
+      }
+
+      .st10, .st8 {
+        fill: #c6a366;
+      }
+
+      .st3 {
+        fill: #f2adad;
+      }
+
+      .st11 {
+        fill: #f2bbbb;
+      }
+    </style>
+  </defs>
+  <g id="Capa_3">
+    <path class="st4" d="M8.2,18.7l-1.5,2.3s3.5,2.4,5.8,2.4,5.9-2.4,5.9-2.4l-1.2-2.1-8.4-.3-.5.2Z"/>
+    <g id="Capa_4">
+      <path class="st9" d="M8.2,18.7l-.6.9s2.7,2,4.9,2,5.1-1.8,5.1-1.8l-.7-1.1h-8.7Z"/>
+    </g>
+    <circle class="st5" cx="12.7" cy="12.4" r="7.9"/>
+    <polygon class="st11" points="5.9 2.8 6.3 7.4 9.7 5.4 7.3 3.3 5.9 2.8"/>
+    <polygon class="st11" points="18.9 2.8 18.5 7.4 15.1 5.4 17.5 3.3 18.9 2.8"/>
+  </g>
+  <g id="carita">
+    <path class="st7" d="M14.1,15.3h0s0,0,0,0h0ZM14,16.4h0s0,0,0,0Z"/>
+    <path class="st7" d="M13,15.2c-.3,0-.5.1-.8.2-.2,0-.4,0-.5-.2,0-.2,0-.4.2-.5,0,0,0,0,0,0,.3,0,.6-.2.9-.2.3,0,.6-.1.8,0,.1,0,.3,0,.4.2.1.2.1.4,0,.5,0,.2-.1.3-.2.4,0,0-.1.2-.2.2,0,0,.1.2.2.3.1.1.2.3.2.4,0,.2,0,.3,0,.5-.1.1-.3.2-.4.2-.2,0-.5,0-.8,0-.3,0-.6-.2-.9-.2-.2,0-.3-.3-.2-.4,0-.2.3-.3.4-.2,0,0,0,0,0,0,.3,0,.5.2.8.2.1,0,.2,0,.3,0-.1-.1-.2-.3-.4-.4-.1-.1-.1-.4,0-.5.1-.1.3-.3.4-.4-.1,0-.2,0-.3,0h0Z"/>
+    <path class="st7" d="M10.1,12.4c.6,0,1-.7,1-1.5s-.4-1.5-1-1.5-1,.7-1,1.5.4,1.5,1,1.5"/>
+    <path class="st7" d="M13.6,12.1c.2.1.5,0,.7-.2,0,0,0,0,0,0,.2-.3.5-.5.8-.5.3,0,.6.2.8.5.1.2.4.3.7.2.2-.1.3-.4.2-.7h0c-.3-.6-1-1-1.7-1-.7,0-1.4.4-1.7,1-.1.2,0,.5.2.7,0,0,0,0,0,0"/>
+    <path class="st8" d="M17,17.8c-3,2.5-7.4,2.1-9.9-.9-2.5-3-2.1-7.4.9-9.9,3-2.5,7.4-2.1,9.9.9,1.2,1.4,1.7,3.2,1.6,5,.3,0,.7.1,1,.3.5-4.4-2.7-8.3-7.1-8.8-4.4-.5-8.3,2.7-8.8,7.1-.5,4.4,2.7,8.3,7.1,8.8,2.2.2,4.5-.5,6.1-2-.3-.2-.6-.4-.8-.6"/>
+    <path class="st6" d="M18.1,14.3c1.3-1.4,4.7,1,0,4.2-4.7-3.1-1.3-5.5,0-4.2h0Z"/>
+  </g>
+  <g id="gato_cosplay">
+    <path class="st10" d="M19.3,8.4h-1s.2-5,.2-5l-3.3,2.2-.6-.8,3.4-2.3c.3-.2.6-.2.9,0,.3.2.5.5.5.8l-.2,5.2Z"/>
+    <path class="st10" d="M5.7,8.4l-.2-5.1c0-.4.2-.7.5-.8.3-.2.7-.1.9,0l3.4,2.3-.6.8-3.3-2.2.2,4.9h-1Z"/>
+    <path class="st3" d="M12.5,14.1l-1.4-1.1h2.9l-1.5,1.1ZM12.5,13.5h0s0,0,0,0h0Z"/>
+    <circle class="st0" cx="12.5" cy="22.1" r="1.6"/>
+    <line class="st2" x1="12.5" y1="20.8" x2="12.5" y2="22.5"/>
+    <path class="st2" d="M11.7,21.7c0,0,.2-.3.5-.4.4-.1.8,0,1.1.3"/>
+  </g>
+  <g id="Capa_5">
+    <line class="st1" x1="17.5" y1="13" x2="23.2" y2="10.8"/>
+    <line class="st1" x1="17.5" y1="13" x2="23.6" y2="13.3"/>
+    <g>
+      <line class="st1" x1="8.8" y1="13" x2="3.1" y2="10.9"/>
+      <line class="st1" x1="8.8" y1="13.1" x2="2.8" y2="13.4"/>
+    </g>
+  </g>
+</svg>
+                <h1>Hola, yo soy <span id="nombre"></span></h1>
+                <p>En la asignatura de Herramientas Computacionales espero aprender <span id="aprendizaje"></span>.</p>
+                <h2>Tengo compañeres que esperan aprender:</h2>
+                <ol>
+                    <li>
+                        <img src="https://ucampus.uchile.cl/d/r/usuario/2b/2bdd5b2584a1f6b86a88b99ad1b17249/perfil/c431b24ac8d89828230db87a3cd7dcef.jpg"/>
+                          <a href="https://camila-calquin.github.io/Primer_trabajo/" target="_blank">Camila Calquín</a>
+                    </li>
+                    <li>
+                        <img src="https://ucampus.uchile.cl/d/r/usuario/12/121316a7c853c2ba33a02fa8c60f3b90/perfil/38043eca356c4c7a780186c2c9994b18.jpg"/>
+                        <a href="https://…" target="_blank">Javier Castillo</a>
+                    </li>
+                    <li>
+                        <img src="https://ucampus.uchile.cl/d/r/usuario/59/59446b3eb7deae1df17575881d3e0c87/perfil/148097cbbeda7b894ed91f7e4c1e92bd.jpg" />
+                        <a href="https://…" target="_blank">Maru</a>
+                    </li>
+                </ol>
+            </div>
+            <div id="pecinco"></div>
+        </main>
+        <script>
+            var valor = document.getElementById("pecinco").offsetWidth;
+
+            window.addEventListener("resize", function () {
+                valor = document.getElementById("pecinco").offsetWidth;
+            });
+
+            function setup() {
+                createCanvas(valor, valor, WEBGL).parent("#pecinco");
+                select("#nombre").html("Giulia Pepe");
+                select("#aprendizaje").html("Nueva materia para desafiarme y crear nuevas cosas");
+            }
+            
+        
+            function draw() {
+                background(255, 216, 223);
+                ambientLight(300);
+  let mx = mouseX - 50;
+  let my = mouseY - 50;
+                 noStroke();
+  pointLight(255, 255, 255, valor/3, valor/2, 50);
+  fill(30, 30, 255);
+  specularMaterial(255);
+  shininess(40);
+  translate(-25, 0, 0);
+  metalness(1);
+  sphere(20);
+  translate(50, 0, 0);
+  metalness(50);
+  sphere(20);
+                orbitControl();
+              cylinder( valor /3);
+            }
+
+            function windowResized() {
+                resizeCanvas(valor, valor);
+            }
+        </script>
+    </body>
+</html>
